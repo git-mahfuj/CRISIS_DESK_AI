@@ -2,6 +2,7 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import "./App.css";
 import { createReportHandler } from "./axios/axios";
+import process from "node:process";
 
 export interface FormType {
   name: string;
@@ -88,7 +89,7 @@ function App() {
       setIsSubmitted(true);
       if (validateForm()) {
         const response = await createReportHandler(formData);
-        console.log("Report Submitted ", response);
+
         const newlyCreatedReport = response.data.data;
 
         setReports((prev: any) => [newlyCreatedReport, ...prev]);
