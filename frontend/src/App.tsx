@@ -2,7 +2,6 @@
 import { useState, type ChangeEvent, type FormEvent } from "react";
 import "./App.css";
 import { createReportHandler } from "./axios/axios";
-import process from "node:process";
 
 export interface FormType {
   name: string;
